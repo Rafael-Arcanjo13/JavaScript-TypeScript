@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio com Strings</title>
+    <style>
+        body {
+            font: normal 1rem Arial;
+        }
+    </style>
+</head>
+<body>
+    <label>Qual o seu nome?</label>
+    <input type='text' placeholder='Nome completo' name='txt' id='txt'></input>
+    <button id='enter' onclick='clicar()'>Enter</button>
+    <div id='res'></div>
+
+    <script>
+        let dados = document.getElementById('txt')
+        let retornar = document.getElementById('res')
+        let btt = document.getElementById('enter')
+
+        function clicar() {
+            retornar.innerHTML = `Seu nome é: ${dados.value} </br>`
+            retornar.innerHTML += `Seu nome tem ${dados.value.length} letras. </br>`
+            retornar.innerHTML += `A segunda letra do seu nome é: '${dados.value.charAt(1)}' </br>`
+            retornar.innerHTML += `Qual o primeiro indice da letra 'a' do seu nome? ${dados.value.indexOf('a')} </br>`
+            retornar.innerHTML += `Qual o ultimo indice da letra 'a' do seu nome? ${dados.value.lastIndexOf('a')} </br>`
+            retornar.innerHTML += `As últimas 3 letras do seu nome são: ${dados.value.slice(-3)} </br>`
+            retornar.innerHTML += `As palavras do seu nome são: ${dados.value.split(' ')} </br>`
+            retornar.innerHTML += `Seu nome com letras maíusculas: ${dados.value.toUpperCase()} </br>`
+            retornar.innerHTML += `Seu nome com letras minúsculas: ${dados.value.toLowerCase()}`
+        }
+
+    </script>
+</body>
+</html>
