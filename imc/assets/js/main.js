@@ -10,8 +10,10 @@ function meuEscopo() {
         const imcCalculo = peso / (altura**2);
         let calculoDoPeso;
 
-        if (imcCalculo < 18,5) {
+        if (imcCalculo < 18.5) {
             calculoDoPeso = '(Abaixo do peso)'
+        } else if (imcCalculo >= 18.5 && imcCalculo <= 24.9) {
+            calculoDoPeso = '(Peso normal)'
         }
         
         
