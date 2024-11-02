@@ -7,6 +7,17 @@ function meuEscopo() {
         const peso = Number(document.querySelector('#input-peso').value)
         const altura = Number(document.querySelector('#input-altura').value)
 
+        if (!peso && !altura) {
+            resultado.innerHTML = 'Valores inválidos!'
+            return;
+        } else if (!peso) {
+            resultado.innerHTML = 'Peso inválido!'
+            return;
+        } else if (!altura) {
+            resultado.innerHTML = 'Altura inválida!'
+            return;
+        }
+
         const imcCalculo = peso / (altura**2);
         let calculoDoPeso;
 
@@ -23,10 +34,6 @@ function meuEscopo() {
         } else if (imcCalculo >= 40) {
             calculoDoPeso = '(Obesidade grau 3)'
         }
-        
-        
-        
-        
         
         resultado.innerHTML = `Seu IMC é ${imcCalculo.toFixed(2)} ${calculoDoPeso}`;
     }
