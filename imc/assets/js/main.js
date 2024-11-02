@@ -14,6 +14,8 @@ function meuEscopo() {
             calculoDoPeso = '(Abaixo do peso)'
         } else if (imcCalculo >= 18.5 && imcCalculo <= 24.9) {
             calculoDoPeso = '(Peso normal)'
+        } else if (imcCalculo >= 25 && imcCalculo <= 29.9) {
+            calculoDoPeso = '(Sobrepeso)'
         }
         
         
