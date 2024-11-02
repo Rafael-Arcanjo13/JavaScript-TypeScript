@@ -28,6 +28,21 @@ body {
     border-radius: 10px;
 }
 
+.tabela-imc {
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+.tabela-imc h2 {
+    font-size: 18pt;
+}
+
+.tabela-imc p {
+    font-size: 10pt;
+    margin: 0;
+}
+
 form input, form label, form button {
     display: block;
     width: 100%;
