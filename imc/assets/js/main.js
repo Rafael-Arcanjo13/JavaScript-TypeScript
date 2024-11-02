@@ -20,7 +20,9 @@ function meuEscopo() {
             calculoDoPeso = '(Obesidade grau 1)'
         } else if (imcCalculo >= 35 && imcCalculo <= 39.9) {
             calculoDoPeso = '(Obesidade grau 2)'
-        } 
+        } else if (imcCalculo >= 40) {
+            calculoDoPeso = '(Obesidade grau 3)'
+        }
         
         
         
