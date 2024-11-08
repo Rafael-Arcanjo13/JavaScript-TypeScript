@@ -1,4 +1,4 @@
-const data = new Date();
+/* const data = new Date();
 const diaSemana = data.getDay();
 const mesAno = data.getMonth();
 const ano = data.getFullYear();
@@ -85,4 +85,8 @@ function mesDoAnoFuncao (mesAno) {
     }
 }
 
-diaExatoTela.innerHTML = `${diaSemanaFuncao(diaSemana)}, ${diaDoMes} de ${mesDoAnoFuncao(mesAno)} de ${ano} às ${hora}:${minutos}h`;
+diaExatoTela.innerHTML = `${diaSemanaFuncao(diaSemana)}, ${diaDoMes} de ${mesDoAnoFuncao(mesAno)} de ${ano} às ${hora}:${minutos}h`;*/
+
+const h1 = document.querySelector('.container h1');
+const data = new Date();
+h1.innerHTML = data.toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short'});
