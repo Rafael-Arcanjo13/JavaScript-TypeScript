@@ -11,3 +11,7 @@ while (rand !== 10) {
     rand = random(min, max)
     console.log(rand)
 }
+
+//A variavel é criada fora do while
+//sitaxe: while (condição) {comando}
+//Lembrar sempre de atualizar de alguma forma a variavel de controle ou vai ser criada um laço infinito.
