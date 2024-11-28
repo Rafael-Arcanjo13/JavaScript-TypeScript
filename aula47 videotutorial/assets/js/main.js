@@ -38,6 +38,7 @@ function relogio() {
             clearInterval(timer);
             relogio.classList.remove('pausado');
             relogio.innerHTML = '00:00:00'
+            segundos = 0;
             marcacoes.innerHTML = ''
         }
 
