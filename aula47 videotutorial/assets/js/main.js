@@ -8,9 +8,7 @@ function relogio() {
     }
 
     const relogio = document.querySelector('.relogio');
-    const iniciar = document.querySelector('.iniciar');
-    const pausar = document.querySelector('.pausar');
-    const zerar = document.querySelector('.zerar');
+    const marcacoes = document.querySelector('.marcacoes');
 
     let segundos = 0;
     let timer;
@@ -40,6 +38,12 @@ function relogio() {
             clearInterval(timer);
             relogio.classList.remove('pausado');
             relogio.innerHTML = '00:00:00'
+            marcacoes.innerHTML = ''
+        }
+
+        if(elementoClicado.classList.contains('marcar')) {
+            let tempoMarcado = criaHoraDosSegundos(segundos)
+            let marcado = marcacoes.innerHTML += `${tempoMarcado} <br>`;
         }
     })
 }
