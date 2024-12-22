@@ -6,6 +6,7 @@ function Calculadora() {
 
     if(this.el.classList.contains('btn-num')) {
       this.addBtnClicado(this.el.innerText)
+      this.display.focus()
     }
 
     if(this.el.classList.contains('btn-clear')) {
@@ -20,17 +21,35 @@ function Calculadora() {
       this.realizaConta()
     }
   })
-
-  this.realizaConta = () => {
-    let conta = this.display.value
-
-    conta = eval(conta)
-    this.display.value = String(conta)
-  }
   
   this.addBtnClicado = (valor) => {
     this.display.value += valor;
   }
+
+  this.realizaConta = () => {
+    let conta = this.display.value
+
+    try {
+      conta = eval(conta)
+
+      if(!conta) {
+        alert('Conta Invalida!')
+        return
+      }
+
+      this.display.value = String(conta)
+    } catch (e) {
+      alert('Conta Invalida!')
+      return
+    }
+  }
+
+  this.teclaPressionada = this.display.addEventListener('keypress', (e) => {
+    if(e.keyCode === 13) {
+      this.realizaConta()
+      this.display.focus()
+    }
+  })
 }
 
 const c1 = new Calculadora()
