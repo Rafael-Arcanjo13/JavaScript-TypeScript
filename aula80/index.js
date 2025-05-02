@@ -1,5 +1,5 @@
 
-const _velocidade = Symbol('velocidade');
+const _velocidade = Symbol('velocidade'); // Cria um ID único para a variavél
 class Carro {
     constructor(nome) {
         this.nome = nome;
@@ -7,12 +7,14 @@ class Carro {
     }
 
     set velocidade(valor) {
+        console.log('SETTER')
         if(typeof valor !== 'number') return;
         if(valor >= 100 || valor <= 0) return;
         this[_velocidade] = valor;
     }
 
     get velocidade() {
+        console.log('GETTER')
         return this[_velocidade];
     }
 
