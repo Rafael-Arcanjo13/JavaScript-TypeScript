@@ -23,3 +23,24 @@ document.addEventListener('click', (e) => {
         carregaPagina(el);
     }
 })
+
+async function carregaPagina(el) {
+    const href = el.getAttribute('href');
+
+    const config = {
+        method: 'GET',
+        url: href
+    }
+
+    try {
+        const response = await request(objConfig)
+        carregaResultado(response);
+    } catch(e) {
+        console.log(e);
+    };
+}
+
+function carregaResultado(response) {
+    const resultado = document.querySelector('.resultado');
+    resultado.innerHTML = response;
+}
