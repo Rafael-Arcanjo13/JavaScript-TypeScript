@@ -1,24 +1,33 @@
-document.getElementById('btn-carregar').addEventListener('click', async () => {
-    const lista = document.getElementById('lista-usuarios');
-    lista.innerHTML = 'Carregando...';
+const btn = document.querySelector('#btn-carregar').addEventListener('click', e => {
+    const url = 'https://jsonplaceholder.typicode.com/users';
+    const listaUsuarios = document.querySelector('#lista-usuarios');
+    listaUsuarios.innerHTML = 'Carregando...'
 
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    async function carregaResultado(url) {
+        try {
+            const response = await fetch(url);
 
-        if (!response.ok) throw new Error('Erro ao carregar os usuários.');
+            if (!response.ok) throw new Error('Erro ao carregar os usuários.');
 
-        const usuarios = await response.json();
+            const users = await response.json();
 
-        lista.innerHTML = ''; // Limpa o "Carregando..."
+            listaUsuarios.innerHTML = '';
 
-        usuarios.forEach(usuario => {
-            const li = document.createElement('li');
-            li.textContent = `${usuario.name} - ${usuario.email}`;
-            lista.appendChild(li);
-        });
+            users.forEach(user => {
+                const response = (`${user.name} - ${user.email}`);
 
-    } catch (e) {
-        lista.innerHTML = 'Erro ao carregar os dados.';
-        console.log(e);
-    }
-});
+                const li = document.createElement('li');
+                listaUsuarios.appendChild(li);
+                li.innerHTML += response;
+            });
+        } catch (e) {
+            listaUsuarios.innerHTML = 'Erro ao carregar os usuários.';
+            console.log(e);
+        };
+
+
+    };
+
+    carregaResultado(url);
+
+})
