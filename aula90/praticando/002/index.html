@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="search_container">
+        <input type="number" name="name" id="userId" placeholder="Digite o ID do usuário...">
+        <input type="button" value="Buscar Posts" id="btn_search">
+    </div>
+    <ul id="list"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
