@@ -12,9 +12,9 @@ app.get('/', (req, res) => {
         `);
 });
 
-app.get('/testes/:idUsuarios', (req, res) => {
+app.get('/testes/:idUsuarios?/:parametro?', (req, res) => {
     console.log(req.params);
-    res.send(req.params.idUsuarios)
+    res.send(req.params)
 })
 
 app.post('/', (req, res) => {
